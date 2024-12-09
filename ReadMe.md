@@ -117,6 +117,12 @@ Usuário: admin
 Senha: 123456A#
 ```
 
+```bash
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
+```
+
 * Virtual Environment - Desativar Ambiente Virtual:
 
 ```bash
@@ -254,8 +260,8 @@ code admin/settings/py
 'HOST': '127.0.0.1',
 'PORT': '3306'
 'NAME': 'celke',
-'USER': 'root',
-'PASSWORD': 'r00t@53cr#3t',
+'USER': 'celke',
+'PASSWORD': '123456A#',
 ```
 
 Executar as migrations para criar as tabelas.
