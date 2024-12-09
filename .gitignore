@@ -1,4 +1,4 @@
 db.sqlite3
 __pycache__
-admin/__pycache__
-venv
+admin/__pycache__/
+venv/
