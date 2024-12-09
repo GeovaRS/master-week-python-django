@@ -338,8 +338,10 @@ Remover o arquivo do cache do GIT.
 git rm --cached db.sqlite3
 ```
 
-Remover o diretório do cache do GIT.
+Remover o diretório do cache do GIT e venv.
 
 ```bash
 git rm --cached -r admin/__pycache__/
+
+git rm --cached -r venv/
 ```
