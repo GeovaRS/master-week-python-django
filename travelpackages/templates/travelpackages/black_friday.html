@@ -1,0 +1,42 @@
+{% extends "travelpackages/base.html" %}
+{% block content %}
+  <div class="container mt-5">
+   <div class="mb-2 pt-1 pb-4 list-travel-package">
+    <div class="title-bar-list-travel-package"></div>
+    <h4 class="title-list-travel-package">Black Friday Prorrogada</h4>
+   </div>
+
+   <div class="row">
+    {% for package in packages %}
+    <div class="col-md-4 mb-4">
+     <div class="card mb-4 border-light shadow">
+      {% if package.image %}
+      <img
+       src="{{ package.image.url }}"
+       alt="{{ package.name }}"
+       class="card-img-top"
+      />
+      <div class="card-body text-center">
+       <h5 class="card-title">{{ package.name}}</h5>
+       <p class="card-text">
+        <span class="text-muted"><del><small>
+         R$ {{ package.original_price }}
+        </small></del></span>
+        <span class="text-success">
+         R$ {{ package.discounted_price }}
+        </span>
+       </p>
+       <a
+        href="{% url 'package_detail' id=package.id %}"
+        class="btn btn-primary btn-sm"
+       >
+        Mais Detalhes
+       </a>
+      </div>
+      {% endif %}
+     </div>
+    </div>
+    {% endfor %}
+   </div>
+  </div>
+{% endblock content %}

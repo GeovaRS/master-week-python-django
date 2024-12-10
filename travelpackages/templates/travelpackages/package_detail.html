@@ -1,0 +1,47 @@
+{% extends "travelpackages/base.html" %}
+{% block content %}
+  <div class="container mt-5">
+   <div class="mb-2 pt-1 pb-4 list-travel-package">
+    <div class="title-bar-list-travel-package"></div>
+    <h4 class="title-list-travel-package">Pacote de Viagem</h4>
+   </div>
+
+    <div class="row mb-2">
+     <div
+      class="row g-0 border-light rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative"
+     >
+      <div class="col-12 col-md-8">
+       {% if package.image %}
+       <img
+        src="{{ package.image.url }}"
+        alt="{{ package.name }}"
+        class="img-fluid"
+       />
+       {% endif %}
+      </div>
+
+      <div class="col-12 col-md-4 p-4 d-flex flex-column position-static">
+       <strong class="d-inline-block mb-2 text-primary">
+        {{ package.name }}
+       </strong>
+
+       <div class="mb-2 text-muted">
+        <del>R$ {{ package.original_price }}</del>
+       </div>
+       <h3 class="mb-4">
+        R$ {{ package.discounted_price }}
+       </h3>
+       <a href="#" class="btn btn-primary">
+        Reservar Agora
+       </a>
+      </div>
+     </div>
+    </div>
+
+    <div class="row shadow p-4 mb-4">
+     <p>
+      {{ package.description|safe }}
+     </p>
+    </div>
+  </div>
+{% endblock content %}
